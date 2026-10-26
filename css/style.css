@@ -2255,42 +2255,6 @@ textarea.form-control { resize: vertical; min-height: 96px; }
   font-weight: 800;
 }
 
-/* Call to action */
-.kids-cta {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
-  background: var(--color-navy);
-  border-radius: var(--r-2xl);
-  padding: clamp(1.75rem, 4vw, 3rem);
-}
-
-.kids-cta-title {
-  font-size: var(--fs-xl);
-  color: #fff;
-  margin-bottom: 0.5rem;
-}
-
-.kids-cta-text {
-  color: rgba(255,255,255,0.75);
-  max-width: 560px;
-}
-
-.kids-cta-actions { display: flex; gap: 0.75rem; flex-shrink: 0; }
-
-.btn-outline-light {
-  background: transparent;
-  color: #fff;
-  border-color: rgba(255,255,255,0.35);
-}
-.btn-outline-light:hover {
-  background: #fff;
-  color: var(--color-navy);
-  border-color: #fff;
-  transform: translateY(-1px);
-}
-
 @media (max-width: 1024px) {
   .kids-hero-grid { grid-template-columns: 1fr; }
   .kids-hero-content { text-align: center; }
@@ -2299,13 +2263,9 @@ textarea.form-control { resize: vertical; min-height: 96px; }
 
   .program-grid { grid-template-columns: 1fr; }
   .program-photo { aspect-ratio: 16 / 9; }
-
-  .kids-cta { flex-direction: column; align-items: flex-start; }
 }
 
 @media (max-width: 480px) {
   .kids-hero-content .hero-actions .btn { white-space: normal; }
   .program-cause-list { grid-template-columns: 1fr; }
-  .kids-cta-actions { flex-direction: column; width: 100%; }
-  .kids-cta-actions .btn { width: 100%; }
 }
