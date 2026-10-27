@@ -1,6 +1,6 @@
 # Asha Jyothi Employable Skill Training Centre — Website
 
-A responsive, production-quality single-page institutional website for **Asha Jyothi Employable Skill Training Centre**, an established vocational institute with over 10 years of operating experience and official recognition by the Intermediate Board of Telangana.
+A responsive, production-quality single-page institutional website for **Asha Jyothi Employable Skill Training Centre**, a non-profit vocational institute operating since 2007 (16,800+ students trained) with official recognition by the Intermediate Board of Telangana.
 
 This project is built using semantic **HTML5**, modern **CSS3**, and modular **Vanilla JavaScript (ES6+)** with zero external runtime frameworks or build dependencies.
 
@@ -79,6 +79,20 @@ npx serve .
 
 ### Option D: Direct Browser Opening
 Double-click `index.html` to open directly in any modern browser (Chrome, Edge, Firefox, Safari).
+
+### After editing courses: run the SEO build
+`js/data.js` is the single source of truth for courses. Search engines and AI assistants don't reliably run JavaScript, so a small build step writes static copies of that data. After any change to `js/data.js`, run from the project root (Node 18+, no packages needed):
+
+```bash
+node tools/build.mjs
+```
+
+This regenerates:
+- `courses/<id>.html`: one crawlable page per course (with Course, FAQ and breadcrumb structured data)
+- the static course cards, course list JSON-LD and "Popular Courses" footer links in `index.html` (between `<!-- BUILD:... -->` markers; don't edit inside them by hand)
+- `sitemap.xml`
+
+Commit the generated files along with the `data.js` change.
 
 ---
 
@@ -183,7 +197,7 @@ To replace them with actual institute photographs:
 ## 8. Verified Institutional Information
 
 - **Institute Name**: Asha Jyothi Employable Skill Training Centre
-- **Operating History**: Over 10 Years of Continuous Service (Est. 2014)
+- **Operating History**: Founded June 2007; 16,800+ students trained
 - **Board Recognition**: Recognized by the Intermediate Board of Telangana
 - **General Course Fee**: Courses starting from ₹750*
 - **Campus 1 (Secunderabad / Alwal)**: Phone `80196 80291`

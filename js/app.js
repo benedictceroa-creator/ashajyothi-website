@@ -406,8 +406,12 @@ document.addEventListener('DOMContentLoaded', () => {
     window.initCourseModal();
   }
 
-  // 4. Admission Enquiry Form
+  // 4. Admission Enquiry Form (course pages link here with ?course=<id>)
   initEnquiryForm();
+  const presetCourse = new URLSearchParams(window.location.search).get('course');
+  if (presetCourse && document.getElementById('enquiry-form')) {
+    selectCourseAndScrollToEnquiry(presetCourse);
+  }
 
   // 5. Animated Number Counter for Stats
   initStatsCounter();

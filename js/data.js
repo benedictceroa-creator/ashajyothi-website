@@ -27,8 +27,13 @@ const COURSES_DATA = [
     eligibility: "Open to all learners (No prior stitching experience required)",
     fee: null,
     feeStatus: "contact",
-    image: "assets/images/tailoring basic.jpg",
-    badge: "Popular"
+    image: "assets/images/tailoring-basic.webp",
+    badge: "Popular",
+    careers: [
+      "Tailor in boutiques and tailoring shops",
+      "Sewing machine operator in garment units",
+      "Home-based stitching and alterations"
+    ]
   },
   {
     id: "tailoring-advanced",
@@ -48,8 +53,13 @@ const COURSES_DATA = [
     eligibility: "Basic tailoring knowledge or completion of Tailoring (Basic)",
     fee: null,
     feeStatus: "contact",
-    image: "assets/images/tailoring.jpg",
-    badge: "Advanced"
+    image: "assets/images/tailoring-advanced.webp",
+    badge: "Advanced",
+    careers: [
+      "Master tailor in designer boutiques",
+      "Bridal and designer blouse specialist",
+      "Running your own home boutique"
+    ]
   },
   {
     id: "maggam-electric-machine",
@@ -69,8 +79,13 @@ const COURSES_DATA = [
     eligibility: "Open to all learners interested in bridal craft and modern stitching",
     fee: null,
     feeStatus: "contact",
-    image: "assets/images/Maggam.jpg",
-    badge: "In-Demand"
+    image: "assets/images/maggam-embroidery.webp",
+    badge: "In-Demand",
+    careers: [
+      "Maggam and Aari embroidery artist",
+      "Bridal wear and boutique workshops",
+      "Home-based embroidery orders"
+    ]
   },
   {
     id: "beautician-basic",
@@ -90,8 +105,13 @@ const COURSES_DATA = [
     eligibility: "Open to all interested candidates",
     fee: null,
     feeStatus: "contact",
-    image: "assets/images/beautician.jpg",
-    badge: "Self-Employment"
+    image: "assets/images/beautician-basic.webp",
+    badge: "Self-Employment",
+    careers: [
+      "Beautician or salon assistant",
+      "Beauty parlour and spa staff",
+      "Home beauty services"
+    ]
   },
   {
     id: "beautician-advanced",
@@ -111,8 +131,13 @@ const COURSES_DATA = [
     eligibility: "Completion of Beautician (Basic) or salon experience",
     fee: null,
     feeStatus: "contact",
-    image: "assets/images/beauticianadv.jpg",
-    badge: "Career Builder"
+    image: "assets/images/beautician-advanced.webp",
+    badge: "Career Builder",
+    careers: [
+      "Senior beautician and makeup artist",
+      "Bridal and party makeup artist",
+      "Running your own beauty parlour"
+    ]
   },
 
   // Language and Teaching (3 courses)
@@ -134,8 +159,13 @@ const COURSES_DATA = [
     eligibility: "Anyone wanting to start speaking English confidently",
     fee: null,
     feeStatus: "contact",
-    image: "assets/images/Spoken Engl.jpg",
-    badge: "Foundational"
+    image: "assets/images/spoken-english-level-1.webp",
+    badge: "Foundational",
+    careers: [
+      "Confidence for interviews and customer-facing jobs",
+      "Retail and front-desk roles",
+      "Foundation for Spoken English Level 2"
+    ]
   },
   {
     id: "spoken-english-l2",
@@ -155,8 +185,13 @@ const COURSES_DATA = [
     eligibility: "Basic spoken English ability or completion of Level 1",
     fee: null,
     feeStatus: "contact",
-    image: "assets/images/Spoken English.jpg",
-    badge: "Career Focused"
+    image: "assets/images/spoken-english-level-2.webp",
+    badge: "Career Focused",
+    careers: [
+      "Customer support and call centre roles",
+      "Front office and receptionist jobs",
+      "Sales and retail roles"
+    ]
   },
   {
     id: "pre-primary-teachers-training",
@@ -176,8 +211,13 @@ const COURSES_DATA = [
     eligibility: "10th / Intermediate / Degree pass (Open to aspiring educators)",
     fee: null,
     feeStatus: "contact",
-    image: "assets/images/Pre-primary teacher.jpg",
-    badge: "Job Oriented"
+    image: "assets/images/pre-primary-teacher-training.webp",
+    badge: "Job Oriented",
+    careers: [
+      "Nursery, kindergarten and playschool teacher",
+      "Teaching assistant in schools",
+      "Daycare or home playschool"
+    ]
   },
 
   // Technical Trades (2 courses)
@@ -199,8 +239,13 @@ const COURSES_DATA = [
     eligibility: "10th standard or interest in electrical technical trades",
     fee: null,
     feeStatus: "contact",
-    image: "assets/images/Electrical.jpg",
-    badge: "High Demand"
+    image: "assets/images/electrical-electronics.webp",
+    badge: "High Demand",
+    careers: [
+      "House wiring electrician",
+      "Electrical maintenance helper in buildings and factories",
+      "Self-employed electrician"
+    ]
   },
   {
     id: "home-appliance-repair",
@@ -220,8 +265,13 @@ const COURSES_DATA = [
     eligibility: "Basic technical inclination; open to all learners",
     fee: null,
     feeStatus: "contact",
-    image: "assets/images/Home Appl 2.png",
-    badge: "Immediate Earning"
+    image: "assets/images/home-appliance-repair.webp",
+    badge: "Immediate Earning",
+    careers: [
+      "Technician at appliance service centres",
+      "Appliance repair shop",
+      "On-call home repair services"
+    ]
   },
 
   // Healthcare (3 courses)
@@ -243,8 +293,13 @@ const COURSES_DATA = [
     eligibility: "10th Pass or 12th Pass",
     fee: null,
     feeStatus: "contact",
-    image: "assets/images/Nursing 2.jpg",
-    badge: "Healthcare Hero"
+    image: "assets/images/nursing-assistant.webp",
+    badge: "Healthcare Hero",
+    careers: [
+      "Nursing assistant (GDA) in hospitals",
+      "Patient care attendant in nursing homes",
+      "Home healthcare attendant"
+    ]
   },
   {
     id: "medical-lab-phlebotomy",
@@ -264,8 +319,13 @@ const COURSES_DATA = [
     eligibility: "10th / 12th Pass (Science stream preferred but open)",
     fee: null,
     feeStatus: "contact",
-    image: "assets/images/Phlebotomy.png",
-    badge: "Clinical Skill"
+    image: "assets/images/phlebotomy.webp",
+    badge: "Clinical Skill",
+    careers: [
+      "Phlebotomist in diagnostic laboratories",
+      "Blood collection at hospitals and blood banks",
+      "Home sample collection technician"
+    ]
   },
   {
     id: "pharmacy-assistant",
@@ -285,8 +345,13 @@ const COURSES_DATA = [
     eligibility: "10th / 12th Pass",
     fee: null,
     feeStatus: "contact",
-    image: "assets/images/Pharmacy 1.jpg",
-    badge: "Retail Healthcare"
+    image: "assets/images/pharmacy-assistant.webp",
+    badge: "Retail Healthcare",
+    careers: [
+      "Pharmacy assistant at retail medical shops",
+      "Hospital dispensary assistant",
+      "Stock assistant in pharma warehouses"
+    ]
   },
 
   // Computer Courses (3 courses)
@@ -308,8 +373,13 @@ const COURSES_DATA = [
     eligibility: "Open to all learners desiring digital literacy",
     fee: null,
     feeStatus: "contact",
-    image: "assets/images/Computers.jpg",
-    badge: "Essential"
+    image: "assets/images/computer-basic-ms-office.webp",
+    badge: "Essential",
+    careers: [
+      "Office assistant",
+      "Computer operator",
+      "Foundation for Tally and DTP courses"
+    ]
   },
   {
     id: "dtp",
@@ -329,8 +399,13 @@ const COURSES_DATA = [
     eligibility: "Basic computer familiarity recommended",
     fee: null,
     feeStatus: "contact",
-    image: "assets/images/dtp.jpeg",
-    badge: "Creative"
+    image: "assets/images/dtp-desktop-publishing.webp",
+    badge: "Creative",
+    careers: [
+      "DTP operator at printing presses",
+      "Flex, banner and invitation designer",
+      "Freelance graphic design work"
+    ]
   },
   {
     id: "tally-data-entry",
@@ -350,8 +425,13 @@ const COURSES_DATA = [
     eligibility: "10th / 12th / Commerce students or general job seekers",
     fee: null,
     feeStatus: "contact",
-    image: "assets/images/Tally.jpg",
-    badge: "High Placement"
+    image: "assets/images/tally-data-entry.webp",
+    badge: "High Placement",
+    careers: [
+      "Accounts assistant",
+      "Billing and GST data entry staff",
+      "Data entry operator"
+    ]
   }
 ];
 

@@ -280,7 +280,7 @@ function initCourseCatalogue() {
             <span class="card-badge">${window.escapeHTML(course.category)}</span>
           </div>
           <div class="card-body">
-            <h3 class="card-title">${window.escapeHTML(course.name)}</h3>
+            <h3 class="card-title"><a href="courses/${window.escapeHTML(course.id)}.html" class="card-title-link">${window.escapeHTML(course.name)}</a></h3>
             <p class="card-description">${window.escapeHTML(course.shortDescription)}</p>
             <div class="card-meta">
               <span class="meta-tag">
@@ -366,6 +366,8 @@ function initCourseCatalogue() {
 
   if (clearFiltersBtn) clearFiltersBtn.addEventListener('click', resetFilters);
   if (emptyClearBtn) emptyClearBtn.addEventListener('click', resetFilters);
+
+  // Static cards from tools/build.mjs are replaced here; mirror any markup change in courseCard() there
 
   // Card Action Button Delegation
   courseGrid.addEventListener('click', (e) => {
