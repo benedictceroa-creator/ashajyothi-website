@@ -26,7 +26,7 @@ const CAMPUSES = [
     address: 'Plot No 2-2-130/14, Near Street Michael School, Dwarakapuri Colony, Kompally Road, Alwal, Hyderabad 500010' },
   { name: 'Medchal Campus', area: 'Athvelly, Medchal', phone: '7780346642',
     address: 'Athvelly, Medchal, Telangana 501401 (Near Shantha Biologics)' },
-  { name: 'Ramanthapur Campus', area: 'Ramanthapur, near Wadiaram', phone: '9949809263',
+  { name: 'Chegunta Campus', area: 'Chegunta (Ramanthapur, near Wadiaram)', phone: '9949809263',
     address: 'Opposite Ithika Shaantham Meadows, Near Hamsa Hostel, Ramanthapur, Wadiaram, Telangana 502255' }
 ];
 
@@ -99,7 +99,7 @@ function courseFaqs(c) {
     { q: `What jobs can I get after the ${c.name} course?`,
       a: `${c.careers.join('; ')}.` },
     { q: `Where can I join the ${c.name} course?`,
-      a: `Asha Jyothi runs classes at three campuses: Alwal (Secunderabad, 80196 80291), Medchal (77803 46642) and Ramanthapur (99498 09263). Call the campus nearest you to check when the next batch starts.` }
+      a: `Asha Jyothi runs classes at three campuses: Alwal (Secunderabad, 80196 80291), Medchal (77803 46642) and Chegunta (99498 09263). Call the campus nearest you to check when the next batch starts.` }
   ];
 }
 

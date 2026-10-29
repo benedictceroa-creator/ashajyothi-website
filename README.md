@@ -23,7 +23,7 @@ asha-jyothi-website/
 │   │   ├── about-training.svg         # Hands-on training & mentorship graphic
 │   │   ├── campus-secunderabad.svg    # Secunderabad / Alwal campus illustration
 │   │   ├── campus-medchal.svg         # Medchal campus illustration
-│   │   ├── campus-ramanthapur.svg     # Ramanthapur campus illustration
+│   │   ├── campus-chegunta.webp      # Chegunta campus illustration
 │   │   ├── facility-classrooms.svg    # Facility: Spacious Classrooms
 │   │   ├── facility-practical-labs.svg# Facility: Practical Training Areas
 │   │   ├── facility-computer-lab.svg  # Facility: Computers & Internet
@@ -202,5 +202,5 @@ To replace them with actual institute photographs:
 - **General Course Fee**: Courses starting from ₹750*
 - **Campus 1 (Secunderabad / Alwal)**: Phone `80196 80291`
 - **Campus 2 (Medchal)**: Phone `77803 46642`
-- **Campus 3 (Ramanthapur)**: Phone `99498 09263`
+- **Campus 3 (Chegunta)**: Phone `99498 09263`
 - **Email**: `info@ashajyothi.org.in`
