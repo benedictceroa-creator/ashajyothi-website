@@ -342,6 +342,36 @@ ul, ol { list-style: none; }
 .nav-toggle.is-active .nav-toggle-bar:nth-child(2) { opacity: 0; }
 .nav-toggle.is-active .nav-toggle-bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
+/* English / Telugu switch: sits after the nav on desktop, beside the menu button on mobile */
+.lang-switch {
+  order: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  flex-shrink: 0;
+  padding: 0.4rem 0.75rem;
+  border: 1px solid var(--color-border-md);
+  border-radius: var(--r-md);
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--color-navy);
+  white-space: nowrap;
+  transition: all var(--t-fast);
+}
+.lang-switch:hover { border-color: var(--color-red); color: var(--color-red); }
+.header-container .nav-menu { margin-left: auto; }
+
+/* Telugu pages: Telugu glyphs fall back to Noto Sans Telugu, and need looser lines and no tracking */
+html[lang="te"] {
+  --font-family: 'Plus Jakarta Sans', 'Noto Sans Telugu', system-ui, -apple-system, sans-serif;
+  --lh-tight: 1.4;
+}
+html[lang="te"] body *,
+:lang(te) { letter-spacing: normal; }
+html[lang="te"] .hero-headline,
+html[lang="te"] .section-title { line-height: 1.45; }
+
 /* ==========================================================================
    6. Hero
    ========================================================================== */
@@ -1724,6 +1754,7 @@ textarea.form-control { resize: vertical; min-height: 96px; }
   }
 
   .site-header .nav-toggle { display: flex; }
+  .lang-switch { order: 0; margin-left: auto; padding: 0.35rem 0.6rem; }
 
   /* Mobile Backdrop Overlay */
   .nav-overlay {

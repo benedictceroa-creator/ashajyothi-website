@@ -12,6 +12,25 @@
 
 'use strict';
 
+// English defaults; js/data.te.js overrides them on Telugu pages
+const FORM_TEXT = Object.assign({
+  nameRequired: 'Please enter your full name.',
+  nameTooShort: 'Name must be at least 2 characters.',
+  nameInvalid: 'Name contains invalid characters.',
+  phoneRequired: 'Please enter your 10-digit mobile number.',
+  phoneInvalid: 'Please enter a valid 10-digit Indian mobile number (e.g. 9876543210).',
+  campusRequired: 'Please select your preferred campus location.',
+  courseRequired: 'Please choose a course you are interested in.',
+  emailInvalid: 'Please enter a valid email address (or leave blank).',
+  sending: 'Sending Enquiry...',
+  submit: 'Submit Enquiry',
+  demoTitle: 'Demonstration Notice',
+  successTitle: 'Enquiry Transmitted Successfully',
+  errorTitle: 'Submission Error',
+  callUs: 'You can contact Asha Jyothi directly at',
+  networkError: 'A network error occurred while attempting to send your enquiry. Please reach our admissions team directly at 80196 80291.'
+}, window.AJ_STRINGS);
+
 /**
  * Preselect course in enquiry dropdown and smoothly scroll to it
  * @param {string} courseId 
@@ -64,7 +83,7 @@ function initEnquiryForm() {
 
     Object.keys(grouped).forEach((cat) => {
       const optgroup = document.createElement('optgroup');
-      optgroup.label = cat;
+      optgroup.label = grouped[cat][0].categoryLabel || cat;
       grouped[cat].forEach((course) => {
         const option = document.createElement('option');
         option.value = course.id;
@@ -79,26 +98,27 @@ function initEnquiryForm() {
   const validators = {
     'enquiry-name': (val) => {
       const trimmed = val.trim();
-      if (!trimmed) return 'Please enter your full name.';
-      if (trimmed.length < 2) return 'Name must be at least 2 characters.';
-      if (!/^[a-zA-Z\s.'-]+$/.test(trimmed)) return 'Name contains invalid characters.';
+      if (!trimmed) return FORM_TEXT.nameRequired;
+      if (trimmed.length < 2) return FORM_TEXT.nameTooShort;
+      // Latin or Telugu script (U+0C00–U+0C7F), so names typed in Telugu are accepted
+      if (!/^[a-zA-Zఀ-౿\s.'-]+$/.test(trimmed)) return FORM_TEXT.nameInvalid;
       return '';
     },
     'enquiry-phone': (val) => {
       const trimmed = val.trim();
-      if (!trimmed) return 'Please enter your 10-digit mobile number.';
+      if (!trimmed) return FORM_TEXT.phoneRequired;
       const cleaned = trimmed.replace(/[\s-]/g, '');
       if (!/^[6-9]\d{9}$/.test(cleaned)) {
-        return 'Please enter a valid 10-digit Indian mobile number (e.g. 9876543210).';
+        return FORM_TEXT.phoneInvalid;
       }
       return '';
     },
     'enquiry-campus': (val) => {
-      if (!val || val === '') return 'Please select your preferred campus location.';
+      if (!val || val === '') return FORM_TEXT.campusRequired;
       return '';
     },
     'enquiry-course': (val) => {
-      if (!val || val === '') return 'Please choose a course you are interested in.';
+      if (!val || val === '') return FORM_TEXT.courseRequired;
       return '';
     },
     'enquiry-email': (val) => {
@@ -106,7 +126,7 @@ function initEnquiryForm() {
       if (!trimmed) return ''; // Optional
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailRegex.test(trimmed)) {
-        return 'Please enter a valid email address (or leave blank).';
+        return FORM_TEXT.emailInvalid;
       }
       return '';
     }
@@ -164,8 +184,8 @@ function initEnquiryForm() {
 
     if (btnText) {
       btnText.innerHTML = isLoading
-        ? '<i class="fa-solid fa-spinner fa-spin" style="margin-right:8px"></i>Sending Enquiry...'
-        : '<i class="fa-solid fa-paper-plane" style="margin-right:6px;font-size:14px"></i>Submit Enquiry';
+        ? `<i class="fa-solid fa-spinner fa-spin" style="margin-right:8px"></i>${FORM_TEXT.sending}`
+        : `<i class="fa-solid fa-paper-plane" style="margin-right:6px;font-size:14px"></i>${FORM_TEXT.submit}`;
     }
 
     if (spinner) {
@@ -193,13 +213,13 @@ function initEnquiryForm() {
             <i class="fa-solid fa-circle-info"></i>
           </div>
           <div class="status-body">
-            <h4 class="status-title">Demonstration Notice</h4>
+            <h4 class="status-title">${FORM_TEXT.demoTitle}</h4>
             <p class="status-copy">
-              Client-side verification passed for <strong>${safeName}</strong> (Course: <em>${safeCourse}</em>).
+              <strong>${safeName}</strong> (<em>${safeCourse}</em>)
             </p>
             <p class="status-copy">${safeMessage}</p>
             <p class="status-action">
-              You can contact Asha Jyothi directly at <a href="tel:8019680291" class="status-link">80196 80291</a> (Alwal), <a href="tel:7780346642" class="status-link">77803 46642</a> (Medchal), or <a href="tel:9949809263" class="status-link">99498 09263</a> (Chegunta).
+              ${FORM_TEXT.callUs} <a href="tel:8019680291" class="status-link">80196 80291</a> (Alwal), <a href="tel:7780346642" class="status-link">77803 46642</a> (Medchal), or <a href="tel:9949809263" class="status-link">99498 09263</a> (Chegunta).
             </p>
           </div>
         </div>
@@ -212,7 +232,7 @@ function initEnquiryForm() {
             <i class="fa-solid fa-circle-check"></i>
           </div>
           <div class="status-body">
-            <h4 class="status-title">Enquiry Transmitted Successfully</h4>
+            <h4 class="status-title">${FORM_TEXT.successTitle}</h4>
             <p class="status-copy">${safeMessage}</p>
           </div>
         </div>
@@ -225,7 +245,7 @@ function initEnquiryForm() {
             <i class="fa-solid fa-circle-exclamation"></i>
           </div>
           <div class="status-body">
-            <h4 class="status-title">Submission Error</h4>
+            <h4 class="status-title">${FORM_TEXT.errorTitle}</h4>
             <p class="status-copy">${safeMessage}</p>
           </div>
         </div>
@@ -266,6 +286,8 @@ function initEnquiryForm() {
       preferredCampus: document.getElementById('enquiry-campus').value,
       courseId: courseId,
       courseName: courseObj ? courseObj.name : courseId,
+      // Admissions staff read enquiry emails in English, whichever page the student used
+      courseNameEn: courseObj ? (courseObj.nameEn || courseObj.name) : courseId,
       email: document.getElementById('enquiry-email').value.trim(),
       message: (document.getElementById('enquiry-message')?.value || '').trim()
     };
@@ -291,7 +313,7 @@ function initEnquiryForm() {
         isDemo: false,
         fullName: formData.fullName,
         courseName: formData.courseName,
-        message: 'A network error occurred while attempting to send your enquiry. Please reach our admissions team directly at 80196 80291.'
+        message: FORM_TEXT.networkError
       });
     } finally {
       // NEVER leaves button in infinite loading state!

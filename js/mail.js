@@ -171,7 +171,8 @@ const MailService = (function () {
       from_email: data.email || 'Not provided',
       campus: data.preferredCampus,
       preferred_campus: data.preferredCampus,
-      course_name: data.courseName,
+      course_name: data.courseNameEn || data.courseName,
+      page_language: document.documentElement.lang || 'en',
       message: data.message || 'No additional note provided.',
       reply_to: data.email || 'info@ashajyothi.org.in',
       submitted_at: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })
@@ -189,12 +190,14 @@ const MailService = (function () {
       ]);
 
       if (response && (response.status === 200 || response.text === 'OK')) {
+        const successText = (window.AJ_STRINGS && window.AJ_STRINGS.enquirySuccess) ||
+          ((name, course, phone) => `Thank you, ${name}! Your enquiry for "${course}" has been received. Our admissions team will call you at ${phone} shortly.`);
         return {
           success: true,
           isDemo: false,
           fullName: data.fullName,
           courseName: data.courseName,
-          message: `Thank you, ${data.fullName}! Your enquiry for "${data.courseName}" has been received. Our admissions team will call you at ${data.mobileNumber} shortly.`
+          message: successText(data.fullName, data.courseName, data.mobileNumber)
         };
       }
 

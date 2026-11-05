@@ -11,6 +11,19 @@
 
 'use strict';
 
+// English defaults; js/data.te.js overrides them on Telugu pages
+const CATALOGUE_TEXT = Object.assign({
+  viewDetails: 'View Details',
+  enquire: 'Enquire',
+  certified: 'Certified',
+  coursesShowing: (shown, total) => `Showing ${shown} of ${total} courses`,
+  courseImageAlt: (name) => `${name} practical vocational training`,
+  trainingFormat: 'Hands-On Practical Labs'
+}, window.AJ_STRINGS);
+
+// Telugu pages live one folder down (te/) and set this to '../'
+const ASSET_BASE = window.AJ_BASE || '';
+
 const catalogueState = {
   activeCategory: 'all',
   searchQuery: '',
@@ -117,15 +130,16 @@ function openCourseModal(courseId, triggerElement = null) {
   if (!modal || !titleEl) return;
 
   titleEl.textContent = course.name;
-  if (categoryEl) categoryEl.textContent = course.category;
+  if (categoryEl) categoryEl.textContent = course.categoryLabel || course.category;
   if (descriptionEl) descriptionEl.textContent = course.fullDescription;
   if (durationEl) durationEl.textContent = course.duration;
+  if (eligibilityEl) eligibilityEl.textContent = course.eligibility;
   const formatEl = document.getElementById('modal-course-format');
-  if (formatEl) formatEl.textContent = 'Hands-On Practical Labs';
+  if (formatEl) formatEl.textContent = CATALOGUE_TEXT.trainingFormat;
 
   if (imageEl) {
-    imageEl.src = course.image;
-    imageEl.alt = `${course.name} practical vocational training`;
+    imageEl.src = ASSET_BASE + course.image;
+    imageEl.alt = CATALOGUE_TEXT.courseImageAlt(course.name);
   }
 
   if (topicsListEl && Array.isArray(course.keyTopics)) {
@@ -244,7 +258,9 @@ function initCourseCatalogue() {
       const matchesSearch =
         !query ||
         course.name.toLowerCase().includes(query) ||
+        (course.nameEn || '').toLowerCase().includes(query) ||
         course.category.toLowerCase().includes(query) ||
+        (course.categoryLabel || '').toLowerCase().includes(query) ||
         course.shortDescription.toLowerCase().includes(query);
       return matchesCategory && matchesSearch;
     });
@@ -255,7 +271,7 @@ function initCourseCatalogue() {
     const filtered = getFilteredCourses();
 
     if (resultCounter) {
-      resultCounter.textContent = `Showing ${filtered.length} of ${courses.length} courses`;
+      resultCounter.textContent = CATALOGUE_TEXT.coursesShowing(filtered.length, courses.length);
     }
 
     if (filtered.length === 0) {
@@ -271,13 +287,13 @@ function initCourseCatalogue() {
       return `
         <article class="course-card" data-course-id="${window.escapeHTML(course.id)}">
           <div class="card-media">
-            <img src="${window.escapeHTML(course.image)}" 
-                 alt="${window.escapeHTML(course.name)} practical vocational training"
+            <img src="${window.escapeHTML(ASSET_BASE + course.image)}"
+                 alt="${window.escapeHTML(CATALOGUE_TEXT.courseImageAlt(course.name))}"
                  width="400" 
                  height="240" 
                  loading="lazy" 
                  class="card-img">
-            <span class="card-badge">${window.escapeHTML(course.category)}</span>
+            <span class="card-badge">${window.escapeHTML(course.categoryLabel || course.category)}</span>
           </div>
           <div class="card-body">
             <h3 class="card-title"><a href="courses/${window.escapeHTML(course.id)}.html" class="card-title-link">${window.escapeHTML(course.name)}</a></h3>
@@ -289,21 +305,21 @@ function initCourseCatalogue() {
               </span>
               <span class="meta-tag meta-badge">
                 <i class="fa-solid fa-award" style="font-size:12px; color:var(--color-red); margin-right:3px"></i>
-                ${window.escapeHTML(course.badge || 'Certified')}
+                ${window.escapeHTML(course.badge || CATALOGUE_TEXT.certified)}
               </span>
             </div>
           </div>
           <div class="card-footer">
-            <button type="button" 
-                    class="btn btn-outline btn-sm js-view-details" 
+            <button type="button"
+                    class="btn btn-outline btn-sm js-view-details"
                     data-course-id="${window.escapeHTML(course.id)}"
                     aria-haspopup="dialog">
-              View Details
+              ${window.escapeHTML(CATALOGUE_TEXT.viewDetails)}
             </button>
-            <button type="button" 
-                    class="btn btn-primary btn-sm js-enquire-course" 
+            <button type="button"
+                    class="btn btn-primary btn-sm js-enquire-course"
                     data-course-id="${window.escapeHTML(course.id)}">
-              Enquire
+              ${window.escapeHTML(CATALOGUE_TEXT.enquire)}
             </button>
           </div>
         </article>
