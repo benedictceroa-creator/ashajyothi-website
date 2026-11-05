@@ -99,7 +99,8 @@ const LANG = {
     page: {
       title: (c) => `${c.name} Course in Hyderabad | Asha Jyothi`,
       h1: (c) => `${esc(c.name)} Course <span class="highlight-red">in Hyderabad</span>`,
-      metaDescription: (c) => `${c.shortDescription} Subsidized ${c.name} course at Asha Jyothi, Hyderabad. ${c.duration}. Eligibility: ${c.eligibility}.`,
+      // Hand-written per course in data.js: search engines cut descriptions over 160 characters
+      metaDescription: (c) => c.metaDescription,
       courseName: (c) => `${c.name} Course`,
       credential: 'Certificate of completion',
       breadcrumbHome: 'Home',
@@ -188,7 +189,7 @@ const LANG = {
     page: {
       title: (c) => `${c.name} కోర్సు హైదరాబాద్‌లో – ${c.nameEn} | ఆశా జ్యోతి`,
       h1: (c) => `${esc(c.name)} కోర్సు <span class="highlight-red">హైదరాబాద్‌లో</span>`,
-      metaDescription: (c) => `${c.shortDescription} ఆశా జ్యోతి, హైదరాబాద్‌లో సబ్సిడీ ఫీజుతో ${c.name} కోర్సు. వ్యవధి: ${c.duration}. అర్హత: ${c.eligibility}.`,
+      metaDescription: (c) => c.metaDescription,
       courseName: (c) => `${c.name} కోర్సు`,
       credential: 'కోర్సు పూర్తి సర్టిఫికెట్',
       breadcrumbHome: 'హోమ్',

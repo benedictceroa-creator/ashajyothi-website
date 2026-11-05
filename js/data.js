@@ -15,6 +15,7 @@ const COURSES_DATA = [
     category: "Tailoring and Beauty",
     categorySlug: "tailoring-beauty",
     shortDescription: "Foundational stitching, garment measurements, cutting, and basic sewing machine operations for beginners.",
+    metaDescription: "Learn tailoring in Hyderabad from scratch: measurements, cutting and machine stitching. 3-4 month subsidized course, open to all. Enquire at Asha Jyothi.",
     fullDescription: "The Basic Tailoring course is designed for beginners who want to build a solid foundation in garment construction. Students learn body measurement techniques, pattern drafting on paper, fabric cutting, and stitching of essential daily-wear clothing including blouses, simple frocks, and kurtas. Complete hands-on training with pedal and basic sewing machines.",
     keyTopics: [
       "Sewing machine parts, maintenance and troubleshooting",
@@ -41,6 +42,7 @@ const COURSES_DATA = [
     category: "Tailoring and Beauty",
     categorySlug: "tailoring-beauty",
     shortDescription: "Specialized designer apparel, bespoke fitting, intricate necklines, wedding blouse styling, and boutique management.",
+    metaDescription: "Advanced tailoring course in Hyderabad: designer blouses, bridal styling, bespoke fitting and boutique skills. 3-4 months, subsidized fees at Asha Jyothi.",
     fullDescription: "Tailoring Advanced is aimed at learners who already understand basic stitching and want to master boutique-grade designer garments. The curriculum covers princess-cut blouses, katori blouses, designer lehengas, anarkalis, western tops, piping, and modern fashion finishing. Students also receive practical guidance on starting a home boutique or commercial stitching service.",
     keyTopics: [
       "Designer blouse variations (Princess cut, Katori, Padded)",
@@ -67,6 +69,7 @@ const COURSES_DATA = [
     category: "Tailoring and Beauty",
     categorySlug: "tailoring-beauty",
     shortDescription: "Traditional Aari and Maggam embroidery, zardozi needlework, beadwork, and modern electric motor sewing machine handling.",
+    metaDescription: "Maggam, Aari and zardozi embroidery course in Hyderabad, plus electric machine stitching. 3-4 months, open to all, subsidized fees at Asha Jyothi.",
     fullDescription: "This dual-skill course combines high-demand bridal Maggam and Aari embroidery with modern electric motor sewing machine operation. Learners master intricate zardozi, stone, thread, and bead embroidery on frames, alongside high-speed industrial electric stitching machine control to increase garment production efficiency.",
     keyTopics: [
       "Maggam frame setup, cloth mounting and needle handling",
@@ -93,6 +96,7 @@ const COURSES_DATA = [
     category: "Tailoring and Beauty",
     categorySlug: "tailoring-beauty",
     shortDescription: "Essential salon services including skin analysis, threading, waxing, basic facials, manicures, and professional hygiene.",
+    metaDescription: "Beautician course in Hyderabad for beginners: threading, waxing, facials, manicure and salon hygiene. 3-4 months, open to all, subsidized at Asha Jyothi.",
     fullDescription: "The Beautician Basic course prepares learners for entry-level salon employment or self-employed home beauty services. Students receive systematic practical training in eyebrow shaping and threading, body waxing, cleanup, foundational facials, manicure, pedicure, and basic hair oiling and washing with strict hygiene standards.",
     keyTopics: [
       "Threading techniques (eyebrows, forehead, upper lip)",
@@ -119,6 +123,7 @@ const COURSES_DATA = [
     category: "Tailoring and Beauty",
     categorySlug: "tailoring-beauty",
     shortDescription: "Professional makeup artistry, bridal makeover, advanced skin therapies, hair chemical treatments, and salon enterprise.",
+    metaDescription: "Advanced beautician course in Hyderabad: bridal makeup, skin therapies and hair treatments. 3-4 months, subsidized fees. After Basic or salon experience.",
     fullDescription: "An intensive cosmetology course training students in professional bridal makeup, saree draping, advanced skin treatments, hair styling, hair cutting, spa therapies, and salon enterprise. Designed for individuals who wish to work as senior beauticians or launch their own beauty parlour.",
     keyTopics: [
       "Bridal and party makeup application with color correction",
@@ -147,6 +152,7 @@ const COURSES_DATA = [
     category: "Language and Teaching",
     categorySlug: "language-teaching",
     shortDescription: "Foundational English speaking, basic grammar, everyday vocabulary, pronunciation, and overcoming fear of speaking.",
+    metaDescription: "Spoken English classes in Hyderabad for beginners: grammar, vocabulary, pronunciation and confidence. 3-4 months, open to all, subsidized at Asha Jyothi.",
     fullDescription: "Spoken English Level 1 is crafted for learners with little or hesitant English background. The program emphasizes building active vocabulary, understanding sentence structures, correct pronunciation, and removing hesitation through daily guided conversation practice in a supportive, friendly classroom atmosphere.",
     keyTopics: [
       "Essential daily vocabulary and common phrases",
@@ -173,6 +179,7 @@ const COURSES_DATA = [
     category: "Language and Teaching",
     categorySlug: "language-teaching",
     shortDescription: "Advanced communication, workplace fluency, group discussions, public speaking, and professional interview preparation.",
+    metaDescription: "Spoken English Level 2 in Hyderabad: workplace fluency, group discussions, public speaking and interview practice. 3-4 months, subsidized at Asha Jyothi.",
     fullDescription: "Spoken English Level 2 is designed for job seekers, college students, and working professionals who want to transition from basic comprehension to fluent, professional communication. Focuses on workplace etiquette, mock job interviews, presentation skills, email writing, and accent clarity.",
     keyTopics: [
       "Advanced sentence phrasing and professional vocabulary",
@@ -199,6 +206,7 @@ const COURSES_DATA = [
     category: "Language and Teaching",
     categorySlug: "language-teaching",
     shortDescription: "Early childhood education methods, Montessori principles, lesson planning, storytelling, and classroom activity management.",
+    metaDescription: "Pre-primary teacher training in Hyderabad: Montessori methods, lesson planning and classroom activities. 3-4 months, for 10th, Inter or degree pass.",
     fullDescription: "The Pre-Primary Teachers Training program prepares individuals to teach in nursery, kindergarten, and playschool settings. The curriculum covers child psychology, Montessori teaching apparatus, rhymes and storytelling methods, phonics, lesson planning, and child safety.",
     keyTopics: [
       "Child development and early learning psychology",
@@ -227,6 +235,7 @@ const COURSES_DATA = [
     category: "Technical Trades",
     categorySlug: "technical-trades",
     shortDescription: "Domestic electrical wiring, circuit safety, electronic components testing, multimeters, and switchboard servicing.",
+    metaDescription: "Electrician course in Hyderabad: house wiring, circuit safety, multimeters and switchboard servicing. 3-4 months of hands-on labs, subsidized fees.",
     fullDescription: "A hands-on technical course providing comprehensive training in residential and commercial electrical systems. Students work directly in the lab with wiring benches, safety breakers (MCB/ELCB), transformers, soldering tools, multimeters, and foundational electronic components.",
     keyTopics: [
       "Electrical safety standards, earthing, and shock prevention",
@@ -253,6 +262,7 @@ const COURSES_DATA = [
     category: "Technical Trades",
     categorySlug: "technical-trades",
     shortDescription: "Diagnostic servicing and repair for fans, irons, mixer-grinders, washing machines, microwaves, and domestic appliances.",
+    metaDescription: "Home appliance repair course in Hyderabad: fans, mixers, washing machines and microwaves. 3-4 months, practical training, open to all. Subsidized fees.",
     fullDescription: "Home Appliance Repair trains technicians to diagnose and repair popular household electrical appliances. With rising domestic appliance usage, this course provides immediate wage employment in authorized service centres or self-employed on-call appliance repair businesses.",
     keyTopics: [
       "Ceiling fan rewinding, bearing replacement and capacitor testing",
@@ -281,6 +291,7 @@ const COURSES_DATA = [
     category: "Healthcare",
     categorySlug: "healthcare",
     shortDescription: "Patient care essentials, vital signs monitoring, first aid, bed-side assistance, hygiene, and hospital ward routines.",
+    metaDescription: "Nursing assistant course in Hyderabad after 10th or Inter: patient care, vital signs, first aid and ward routines. 6 months, subsidized fees at Asha Jyothi.",
     fullDescription: "The Medical Nursing Assistant (GDA) course equips learners with practical nursing support skills required in hospitals, nursing homes, and home healthcare. Students learn vital sign recording (BP, pulse, temperature), patient mobility, wound dressing assistance, bed-making, and patient communication.",
     keyTopics: [
       "Patient care, hygiene maintenance, and bed-side assistance",
@@ -307,6 +318,7 @@ const COURSES_DATA = [
     category: "Healthcare",
     categorySlug: "healthcare",
     shortDescription: "Venipuncture blood collection techniques, sample handling, lab safety, vacutainers, and diagnostic lab workflows.",
+    metaDescription: "Phlebotomy course in Hyderabad after 10th or Inter: blood collection, sample handling and lab safety. 6 months, subsidized fees at Asha Jyothi.",
     fullDescription: "Phlebotomy is a specialized clinical skill in high demand across diagnostic laboratories, blood banks, and hospitals. Trainees master correct vein identification, sterile blood sample withdrawal using vacutainer systems, sample labeling, centrifuge operation, and patient reassurance.",
     keyTopics: [
       "Anatomy of veins and vein site selection",
@@ -333,6 +345,7 @@ const COURSES_DATA = [
     category: "Healthcare",
     categorySlug: "healthcare",
     shortDescription: "Pharmacy inventory handling, prescription reading, retail billing, medicine classification, and customer assistance.",
+    metaDescription: "Pharmacy assistant course in Hyderabad after 10th or Inter: prescriptions, medicine stock and billing. 6 months, subsidized fees at Asha Jyothi.",
     fullDescription: "This course trains candidates to work effectively in retail pharmacies, hospital dispensaries, and pharmaceutical warehouses. Trainees learn medicine storage conditions, brand vs generic names, expiry management, inventory entry in pharmacy software, and ethical prescription handling.",
     keyTopics: [
       "Prescription reading and understanding medical abbreviations",
@@ -361,6 +374,7 @@ const COURSES_DATA = [
     category: "Computer Courses",
     categorySlug: "computer-courses",
     shortDescription: "Windows OS, MS Office (Word, Excel, PowerPoint), internet research, email communication, and typing proficiency.",
+    metaDescription: "Basic computer course in Hyderabad: Windows, MS Word, Excel, PowerPoint, email and typing. 3-4 months, own PC for every student, subsidized fees.",
     fullDescription: "A comprehensive digital literacy course designed for complete beginners and office job aspirants. Covers computer hardware basics, operating system navigation, document creation in MS Word, spreadsheets and formulas in MS Excel, presentations in PowerPoint, and safe internet browsing and email usage.",
     keyTopics: [
       "Computer fundamentals, file management and Windows operating system",
@@ -387,6 +401,7 @@ const COURSES_DATA = [
     category: "Computer Courses",
     categorySlug: "computer-courses",
     shortDescription: "Desktop Publishing using Adobe Photoshop, PageMaker / InDesign, and CorelDraw for print design and digital media.",
+    metaDescription: "DTP course in Hyderabad: Photoshop, CorelDraw, PageMaker and InDesign for print and digital design. 3-4 months, subsidized fees at Asha Jyothi.",
     fullDescription: "Desktop Publishing (DTP) trains learners in professional commercial graphic design for printing presses, advertising agencies, flex printing, and flex/brochure design. Students learn vector drawing, photo editing, Telugu/English typing, invitation cards, banners, and pre-press prep.",
     keyTopics: [
       "Adobe Photoshop: Photo retouching, layers, masks and color balance",
@@ -413,6 +428,7 @@ const COURSES_DATA = [
     category: "Computer Courses",
     categorySlug: "computer-courses",
     shortDescription: "Computerised accounting with Tally ERP/Prime, GST billing, inventory ledgers, balance sheets, and fast data entry.",
+    metaDescription: "Tally Prime and data entry course in Hyderabad: GST billing, accounting, inventory and fast typing. 3-4 months, for 10th, Inter and commerce students.",
     fullDescription: "An industry-ready accounting and office administration course. Trainees learn accounting principles, ledger creation, voucher entry, bank reconciliation, inventory management, and GST returns in Tally, combined with rapid numerical data entry and verification techniques.",
     keyTopics: [
       "Accounting fundamentals: Debits, credits, ledgers and trial balance",
